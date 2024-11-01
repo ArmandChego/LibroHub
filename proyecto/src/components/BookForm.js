@@ -1,49 +1,49 @@
-// client/src/components/BookForm.js
+// src/components/BookForm.js
 import React, { useState, useEffect } from 'react';
 
 const BookForm = ({ onAddOrUpdate, editingBook }) => {
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [price, setPrice] = useState('');
+  const [titulo, setTitulo] = useState('');
+  const [autor, setAutor] = useState('');
+  const [precio, setPrecio] = useState('');
 
   useEffect(() => {
     if (editingBook) {
-      setTitle(editingBook.title);
-      setAuthor(editingBook.author);
-      setPrice(editingBook.price);
+      setTitulo(editingBook.titulo);
+      setAutor(editingBook.autor);
+      setPrecio(editingBook.precio);
     }
   }, [editingBook]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddOrUpdate({ title, author, price });
-    setTitle('');
-    setAuthor('');
-    setPrice('');
+    onAddOrUpdate({ titulo, autor, precio });
+    setTitulo('');
+    setAutor('');
+    setPrecio('');
   };
 
   return (
     <form onSubmit={handleSubmit} className="mb-4">
       <input
         type="text"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
+        value={titulo}
+        onChange={(e) => setTitulo(e.target.value)}
         placeholder="Título"
         className="form-control mb-2"
         required
       />
       <input
         type="text"
-        value={author}
-        onChange={(e) => setAuthor(e.target.value)}
+        value={autor}
+        onChange={(e) => setAutor(e.target.value)}
         placeholder="Autor"
         className="form-control mb-2"
         required
       />
       <input
         type="number"
-        value={price}
-        onChange={(e) => setPrice(e.target.value)}
+        value={precio}
+        onChange={(e) => setPrecio(e.target.value)}
         placeholder="Precio"
         className="form-control mb-2"
         required

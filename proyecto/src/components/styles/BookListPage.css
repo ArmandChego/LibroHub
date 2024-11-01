@@ -1,0 +1,76 @@
+.book-list-page {
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  .book-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .book-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-info {
+    text-align: left;
+  }
+  
+  .book-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+  }
+  
+  .book-author {
+    color: #777;
+    margin: 5px 0;
+  }
+  
+  .book-price {
+    font-size: 1.2rem;
+    color: #4CAF50;
+    font-weight: bold;
+  }
+  
+  .book-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .btn-edit {
+    background-color: #4CAF50;
+  }
+  
+  .btn-delete {
+    background-color: #f44336;
+  }
+  
+  .btn-buy {
+    background-color: #607D8B;
+  }
+  
