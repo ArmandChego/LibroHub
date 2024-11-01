@@ -32,7 +32,6 @@ db.connect((err) => {
 });
 
 // Rutas CRUD
-// Obtener todos los libros
 app.get('/books', (req, res) => {
   db.query('SELECT * FROM books', (err, results) => {
     if (err) {
@@ -44,34 +43,31 @@ app.get('/books', (req, res) => {
   });
 });
 
-// Agregar un nuevo libro
 app.post('/books', (req, res) => {
-  const { title, author, price } = req.body;
-  db.query('INSERT INTO books (title, author, price) VALUES (?, ?, ?)', [title, author, price], (err, result) => {
+  const { titulo, autor, precio } = req.body;
+  db.query('INSERT INTO books (titulo, autor, precio) VALUES (?, ?, ?)', [titulo, autor, precio], (err, result) => {
     if (err) {
       console.error('Error adding book:', err);
       res.status(500).json({ error: 'Error adding book' });
     } else {
-      res.json({ id: result.insertId, title, author, price });
+      res.json({ id: result.insertId, titulo, autor, precio });
     }
   });
 });
 
-// Actualizar un libro
 app.put('/books/:id', (req, res) => {
-  const { title, author, price } = req.body;
+  const { titulo, autor, precio } = req.body;
   const { id } = req.params;
-  db.query('UPDATE books SET title = ?, author = ?, price = ? WHERE id = ?', [title, author, price, id], (err) => {
+  db.query('UPDATE books SET titulo = ?, autor = ?, precio = ? WHERE id = ?', [titulo, autor, precio, id], (err) => {
     if (err) {
       console.error('Error updating book:', err);
       res.status(500).json({ error: 'Error updating book' });
     } else {
-      res.json({ id, title, author, price });
+      res.json({ id, titulo, autor, precio });
     }
   });
 });
 
-// Eliminar un libro
 app.delete('/books/:id', (req, res) => {
   const { id } = req.params;
   db.query('DELETE FROM books WHERE id = ?', [id], (err) => {
@@ -84,7 +80,6 @@ app.delete('/books/:id', (req, res) => {
   });
 });
 
-// Iniciar el servidor
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
