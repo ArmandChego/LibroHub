@@ -1,4 +1,3 @@
-// src/components/AddBook.js
 import React, { useState, useEffect } from 'react';
 
 function AddBook({ onAdd, editingBook, setEditingBook }) {

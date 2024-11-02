@@ -1,4 +1,3 @@
-// src/components/Home.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './styles/Home.css';

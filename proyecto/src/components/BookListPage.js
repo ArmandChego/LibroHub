@@ -1,9 +1,8 @@
-// src/components/BookListPage.js
 import React from 'react';
 import './styles/BookListPage.css';
 
 const BookListPage = ({ books, onDelete, onEdit }) => {
-  console.log("Books:", books); // Verifica si los datos están llegando correctamente
+  console.log("Books:", books);
 
   if (!books || books.length === 0) {
     return <p>No hay libros disponibles para mostrar.</p>;
@@ -19,7 +18,7 @@ const BookListPage = ({ books, onDelete, onEdit }) => {
               <p className="book-title">{book.titulo}</p>
               <p className="book-author">por {book.autor}</p>
               <p className="book-price">
-                ${Number(book.precio).toFixed(2)} {/* Convierte precio a número */}
+                ${Number(book.precio).toFixed(2)} {}
               </p>
             </div>
             <div className="book-buttons">

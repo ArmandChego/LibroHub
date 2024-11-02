@@ -1,4 +1,3 @@
-// src/components/CompraLibros.js
 import React from 'react';
 
 const CompraLibros = ({ books, onPurchase }) => {
